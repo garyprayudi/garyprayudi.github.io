@@ -1,1 +1,46 @@
-Hello world!
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		body{font-family:Roboto,Helvetica,sans-serif}*{box-sizing:border-box}.row{display:flex}.left{flex:35%;padding:15px 0}.left h2{padding-left:8px}.right{flex:65%;padding:15px}#mySearch{width:100%;font-size:18px;padding:11px;border:1px solid #ddd}#myMenu{list-style-type:none;padding:0;margin:0}#myMenu li a{backgrxound-color:#f6f6f6;padding:12px;text-decoration:none;font-size:18px;color:#000;display:block}#myMenu li a:hover{background-color:#eee}
+		</style>
+	</head>
+	<body>
+
+		<h2>Search Menu</h2>
+
+		<div class="row">
+				<div class="left" style="background-color:#3f51b5">
+				<h2>Menu</h2>
+				<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a project">
+				<ul id="myMenu">
+  					<li><a href="#">HTML</a></li>
+				</ul>
+				</div>
+
+				<div class="right" style="background-color:#d9ddf2">
+				<h2>Hi...</h2>
+				</div>
+		</div>
+
+		<script>
+		function myFunction() {
+		    var input, filter, ul, li, a, i;
+		    input = document.getElementById("mySearch");
+		    filter = input.value.toUpperCase();
+		    ul = document.getElementById("myMenu");
+		    li = ul.getElementsByTagName("li");
+		    for (i = 0; i < li.length; i++) {
+		        a = li[i].getElementsByTagName("a")[0];
+		        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+		            li[i].style.display = "";
+		        } else {
+		            li[i].style.display = "none";
+		        }
+		    }
+		}
+		</script>
+
+	</body>
+</html>
